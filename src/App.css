@@ -1,0 +1,337 @@
+html, body {
+  overflow: hidden;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  cursor: context-menu;
+}
+
+.mainApp {
+  display: none;
+}
+
+.notFound {
+  display: block;
+  text-align: center;
+  margin-top: 4rem;
+  font-family: "Poppins";
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  padding: 0.6rem;
+  background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 110, 110));
+  border-bottom: 2px solid gray;
+  z-index: 4;
+}
+
+.navbar>p {
+  font-size: 1.2rem;
+  font-family: "Dancing Script";
+  font-weight: bold;
+  margin-right: 3rem;
+  background: linear-gradient(blue, rgb(0, 225, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navIcon {
+  background: linear-gradient(blue, rgb(0, 225, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.sideDrawer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: linear-gradient(to bottom right, black, rgb(255, 110, 110));
+  height: 100vh;
+  border-right: 2px solid gray;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.sideDrawer.show {
+  transform: translateX(0);
+}
+
+.sideDrawer>div:first-child {
+  padding: 0.6rem;
+}
+
+.sideDrawer>div:nth-child(2) {
+  padding: 0.6rem;
+  width: 13rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sideDrawer>div:nth-child(2)>p {
+  font-size: large;
+  color: aquamarine;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.sideDrawer>div:nth-child(2)>p:hover {
+  border: 1px solid rgb(0, 225, 255);
+}
+
+.sideDrawer>div:last-child{
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
+.sideDrawer>div:last-child>p{
+  font-size: 0.5rem;
+  animation: DJ 1s linear infinite;
+}
+@keyframes DJ {
+  0% {
+    color: #ff4500; /* OrangeRed */
+  }
+
+  10% {
+    color: #ff6347; /* Tomato */
+  }
+
+  20% {
+    color: #ffa500; /* Orange */
+  }
+
+  30% {
+    color: #ffd700; /* Gold */
+  }
+
+  40% {
+    color: #adff2f; /* GreenYellow */
+  }
+
+  50% {
+    color: #32cd32; /* LimeGreen */
+  }
+
+  60% {
+    color: #00ced1; /* DarkTurquoise */
+  }
+
+  70% {
+    color: #1e90ff; /* DodgerBlue */
+  }
+
+  80% {
+    color: #9370db; /* MediumPurple */
+  }
+
+  90% {
+    color: #ff1493; /* DeepPink */
+  }
+
+  100% {
+    color: #ff4500; /* OrangeRed (Same as 0%) */
+  }
+}
+
+.body {
+  position: fixed;
+  width: 100vw;
+  padding-top: 6rem;
+  min-height: 100vh;
+  background-color: rgb(180, 85, 85);
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.body.notShow {
+  transform: translateY(0);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: fit-content;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: burlywood;
+  border-radius: 2rem;
+  transform: rotate(-3deg);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.left {
+  width: 20rem;
+  text-align: center;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.happyBirthday {
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.happyBirthday:hover {
+  transform: scale(1.2);
+}
+
+.happyBirthday:hover .shake {
+  animation: Shake 0.5s linear infinite;
+}
+
+@keyframes Shake {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  25% {
+    transform: rotate(-6deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-6deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.happyBirthday>div>p {
+  text-shadow: 2px 2px 8px #FF0000;
+}
+
+.happyBirthday>div>p:first-child {
+  z-index: 2;
+  color: red;
+  position: absolute;
+  font-size: 3rem;
+  font-family: "Italianno";
+  margin-left: 1rem;
+}
+
+.happyBirthday>div>p:last-child {
+  color: blue;
+  position: relative;
+  padding-top: 1.5rem;
+  font-size: 3rem;
+  font-family: "Nerko One";
+  font-weight: bold;
+}
+
+.bestWishes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: antiquewhite;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.div {
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: auto
+}
+
+.div1,
+.div2,
+.div3 {
+  border-left: 2.5px solid rgb(220, 110, 110);
+  border-right: 2.5px solid rgb(220, 110, 110);
+  border-radius: 50%;
+  height: 1.8rem;
+}
+
+.div1 {
+  transform: rotate(25deg);
+  height: 1.2rem;
+}
+
+.div3 {
+  transform: rotate(-25deg);
+  height: 1.2rem;
+}
+
+.right {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.imageDivWrapper {
+  transform: rotate(-4deg);
+  perspective: 1000px;
+}
+
+.imageDiv {
+  position: relative;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: bisque;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 1.2s;
+  transform-style: preserve-3d;
+}
+
+.imageDiv:hover {
+  transform: rotateY(720deg) scale(1.5)
+}
+
+.imageDiv>img {
+  height: 20rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+}
+
+.imageDiv>p {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: "Dancing Script";
+  font-size: 1.4rem;
+}
+
+.message {
+  min-height: 100vh;
+  background-color: antiquewhite;
+  text-align: center;
+}
+
+.messageContent {
+  overflow-y: auto;
+  height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 85vh;
+}
+
+@media screen and (min-width: 1007px) {
+  .mainApp {
+    display: block;
+  }
+
+  .notFound {
+    display: none;
+  }
+}
