@@ -1,6 +1,8 @@
-html, body {
+html,
+body {
   overflow: hidden;
 }
+
 * {
   padding: 0;
   margin: 0;
@@ -9,17 +11,66 @@ html, body {
   cursor: context-menu;
 }
 
-.mainApp {
-  display: none;
-}
-
-.notFound {
-  display: block;
+.mobile-screen {
   text-align: center;
   margin-top: 4rem;
   font-family: "Poppins";
 }
 
+.mobile-screen>p {
+  font-size: 1.4rem;
+}
+
+.mobile-screen>div {
+  display: flex;
+  gap: 4rem;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.mobile-screen>div>button{
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  background-color: #d55a3e;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.yes, .no, .first{
+  margin-top: 4rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.first>div{
+  border: 1px solid gray;
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  padding: 0.6rem 0.2rem 0.6rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.first>div>input{
+  border: none;
+}
+
+.first>div>input:focus{
+  outline: none;
+}
+
+.first>button{
+  padding: 0.2rem 1rem;
+  border: none;
+  background-color: #ea7777;
+  border-radius: 0.2rem;
+}
+
+.first>.hint{
+  font-size: 0.6rem;
+  color: #FF0000;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -91,59 +142,72 @@ html, body {
   border: 1px solid rgb(0, 225, 255);
 }
 
-.sideDrawer>div:last-child{
+.sideDrawer>div:last-child {
   position: fixed;
   bottom: 0;
   right: 50%;
   transform: translateX(50%);
 }
-.sideDrawer>div:last-child>p{
+
+.sideDrawer>div:last-child>p {
   font-size: 0.5rem;
   animation: DJ 1s linear infinite;
 }
+
 @keyframes DJ {
   0% {
-    color: #ff4500; /* OrangeRed */
+    color: #ff4500;
+    /* OrangeRed */
   }
 
   10% {
-    color: #ff6347; /* Tomato */
+    color: #ff6347;
+    /* Tomato */
   }
 
   20% {
-    color: #ffa500; /* Orange */
+    color: #ffa500;
+    /* Orange */
   }
 
   30% {
-    color: #ffd700; /* Gold */
+    color: #ffd700;
+    /* Gold */
   }
 
   40% {
-    color: #adff2f; /* GreenYellow */
+    color: #adff2f;
+    /* GreenYellow */
   }
 
   50% {
-    color: #32cd32; /* LimeGreen */
+    color: #32cd32;
+    /* LimeGreen */
   }
 
   60% {
-    color: #00ced1; /* DarkTurquoise */
+    color: #00ced1;
+    /* DarkTurquoise */
   }
 
   70% {
-    color: #1e90ff; /* DodgerBlue */
+    color: #1e90ff;
+    /* DodgerBlue */
   }
 
   80% {
-    color: #9370db; /* MediumPurple */
+    color: #9370db;
+    /* MediumPurple */
   }
 
   90% {
-    color: #ff1493; /* DeepPink */
+    color: #ff1493;
+    /* DeepPink */
   }
 
   100% {
-    color: #ff4500; /* OrangeRed (Same as 0%) */
+    color: #ff4500;
+    /* OrangeRed (Same as 0%) */
   }
 }
 
@@ -324,14 +388,4 @@ html, body {
   height: 100vh;
   padding-top: 6rem;
   padding-bottom: 85vh;
-}
-
-@media screen and (min-width: 1007px) {
-  .mainApp {
-    display: block;
-  }
-
-  .notFound {
-    display: none;
-  }
 }
