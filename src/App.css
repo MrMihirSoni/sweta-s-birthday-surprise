@@ -306,12 +306,20 @@ body {
 }
 
 .bestWishes {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   background-color: antiquewhite;
   padding: 1rem;
   border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.bestWishes:hover{
+  transform: scale(1.03);
 }
 
 .div {
@@ -343,6 +351,7 @@ body {
 .right {
   margin-top: 4rem;
   margin-bottom: 4rem;
+  z-index: 2;
 }
 
 .imageDivWrapper {
@@ -388,4 +397,26 @@ body {
   height: 100vh;
   padding-top: 6rem;
   padding-bottom: 85vh;
+}
+
+.first>.popup{
+  margin-top: 1rem;
+}
+/* Default popup state */
+.popup {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show the popup with full opacity and no transform */
+.popup.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hide the popup by fading it out and moving it upward */
+.popup.hide {
+  opacity: 0;
+  transform: translateX(-50%);
 }
